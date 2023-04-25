@@ -1,9 +1,11 @@
+import styles from "../../styles/Step1.module.css";
+
 export default function Step1() {
   return (
-    <form className="col col-12" data-phase="address">
+    <form className={`col col-12 ${styles.form}`} data-phase="address">
       <h3 className="form-title">寄送地址</h3>
-      <section className="form-body col col-12">
-        <div className="col col-12">
+      <section className={`form-body col col-12 ${styles.formBody}`}>
+        <div className={`col col-12 ${styles.inputGroup}`}>
           <div className="input-group input-w-lg-2 input-w-sm-s1">
             <div className="input-label">稱謂</div>
             <div className="select-container">

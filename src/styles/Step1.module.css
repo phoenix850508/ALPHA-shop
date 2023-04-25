@@ -1,0 +1,11 @@
+.form {
+  margin: 0 1rem;
+}
+
+.formBody {
+}
+
+.inputGroup {
+  outline: solid red 2px;
+  flex-wrap: nowrap;
+}
