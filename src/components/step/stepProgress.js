@@ -5,7 +5,7 @@ function Step(props) {
     <span className="progress-group" data-phase={props.phase}>
       <span className="progress-icon">
         <span className="text">{props.text}</span>
-        <img src={complete} />
+        <img className="cursor-point" src={complete} />
       </span>
       <span className="progress-label">{props.step}</span>
     </span>
