@@ -1,6 +1,6 @@
 import pgComplete from "../../icons/pg-complete.svg";
 import styled from "styled-components";
-const Description = styled.p`
+const StyleComponent = styled.div`
   .register-title {
     margin: 3rem 0 1.5rem 0;
   }
@@ -95,9 +95,9 @@ function Step(props) {
 
 export default function StepProgess() {
   return (
-    <>
-      <Description>
-        <h2 class="register-title col col-12">結帳</h2>
+    <div>
+      <StyleComponent component="span">
+        <h2 className="register-title col col-12">結帳</h2>
         <section className="progress-container">
           <Step phase={"address"} text={1} step={"寄送地址"} />
           <span className="progress-bar bar1"></span>
@@ -105,7 +105,7 @@ export default function StepProgess() {
           <span className="progress-bar bar2"></span>
           <Step phase={"credit-card"} text={3} step={"付款資訊"} />
         </section>
-      </Description>
-    </>
+      </StyleComponent>
+    </div>
   );
 }

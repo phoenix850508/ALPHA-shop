@@ -6,7 +6,7 @@ import ProgressControl from "./components/step/ProgressControl.js";
 import styled from "styled-components";
 import "./App.css";
 
-const Description = styled.p`
+const Description = styled.div`
   .main-container {
     margin: 0 auto;
     padding: 1rem 2.5rem;
@@ -347,9 +347,9 @@ const Description = styled.p`
 
 function App() {
   return (
-    <>
+    <div>
       <Description>
-        <main calssName="site-main">
+        <main className="site-main">
           <div className="main-container">
             <StepProgress />
             <section className="form-container">
@@ -363,7 +363,7 @@ function App() {
           </div>
         </main>
       </Description>
-    </>
+    </div>
   );
 }
 

@@ -52,7 +52,7 @@ export default function Step1() {
             <div className="input-label">縣市</div>
             <div className="select-container">
               <select className={styles.input} required>
-                <option value="" disabled selected>
+                <option value="" selected disabled>
                   請選擇縣市
                 </option>
                 <option value="KLU">基隆市</option>
