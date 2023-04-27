@@ -1,15 +1,15 @@
-import styles from "../../styles/Step1.module.css";
+import styles from "../styles/Step1.module.css";
 
 export default function Step1() {
   return (
     <form className={`col col-12 ${styles.form}`} data-phase="address">
       <h3 className="form-title">寄送地址</h3>
       <section className={`form-body col col-12 ${styles.formBody}`}>
-        <div className={`col col-12 ${styles.inputGroup}`}>
-          <div className="input-group input-w-lg-2 input-w-sm-s1">
+        <div className={styles.inputGroupContainer}>
+          <div className={`${styles.inputGroup}`}>
             <div className="input-label">稱謂</div>
             <div className="select-container">
-              <select>
+              <select className={`${styles.input}`}>
                 <option value="mr" selected="">
                   先生
                 </option>
@@ -18,27 +18,43 @@ export default function Step1() {
               </select>
             </div>
           </div>
-          <div className="input-group input-w-lg-4 input-w-sm-s2">
+          <div className={`${styles.inputGroup}`}>
             <div className="input-label">姓名</div>
-            <input type="text" placeholder="請輸入姓名" />
+            <input
+              className={`${styles.input}`}
+              type="text"
+              placeholder="請輸入姓名"
+            />
           </div>
         </div>
-        <div className="col col-12">
-          <div className="input-group input-w-lg-3 input-w-sm-full">
+        <div className={styles.inputGroupContainerResize}>
+          <div className={`${styles.inputGroup}`}>
             <div className="input-label">電話</div>
-            <input type="tel" placeholder="請輸入行動電話" />
+            <input
+              className={styles.input}
+              type="tel"
+              placeholder="請輸入行動電話"
+            />
           </div>
-          <div className="input-group input-w-lg-3 input-w-sm-full">
+          <div className={`${styles.inputGroup}`}>
             <div className="input-label">Email</div>
-            <input type="email" placeholder="請輸入電子郵件" />
+            <input
+              className={styles.input}
+              type="email"
+              placeholder="請輸入電子郵件"
+            />
           </div>
         </div>
-        <div className="col col-12">
-          <div className="input-group input-w-lg-2 input-w-sm-full">
+        <div className={styles.inputGroupContainer}>
+          <div
+            className={`input-group input-w-lg-2 input-w-sm-full ${styles.inputGroup}`}
+          >
             <div className="input-label">縣市</div>
             <div className="select-container">
-              <select required="">
-                <option value="">請選擇縣市</option>
+              <select className={styles.input} required>
+                <option value="" disabled selected>
+                  請選擇縣市
+                </option>
                 <option value="KLU">基隆市</option>
                 <option value="TPH">新北市</option>
                 <option value="TPE">臺北市</option>
@@ -71,9 +87,13 @@ export default function Step1() {
               </select>
             </div>
           </div>
-          <div className="input-group input-w-lg-4 input-w-sm-full">
+          <div className={`${styles.inputGroup}`}>
             <div className="input-label">地址</div>
-            <input type="text" placeholder="請輸入地址" />
+            <input
+              className={styles.input}
+              type="text"
+              placeholder="請輸入地址"
+            />
           </div>
         </div>
       </section>

@@ -1,0 +1,21 @@
+.form {
+  margin-bottom: 1.6rem;
+}
+
+.inputGroupContainer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.inputGroup {
+  composes: inputGroup from "./Step1.module.css";
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.input {
+  composes: input from "./Step1.module.css";
+  max-width: 400px;
+}

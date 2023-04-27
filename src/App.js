@@ -1,12 +1,33 @@
-import "./App.css";
 import StepProgress from "./components/step/StepProgress.js";
 import Step1 from "./components/step/Step1.js";
 import Step2 from "./components/step/Step2.js";
 import Step3 from "./components/step/Step3.js";
 import ProgressControl from "./components/step/ProgressControl.js";
 import styled from "styled-components";
+import "./App.css";
 
 const Description = styled.p`
+  .main-container {
+    margin: 0 auto;
+    padding: 1rem 2.5rem;
+    width: 90%;
+  }
+
+  .input-label {
+    color: #808080;
+    font-size: 12px;
+  }
+
+  h3 {
+    font-size: 23px;
+    margin: 1.2rem 0;
+  }
+
+  .progress-control-container {
+    margin-top: 50px;
+    width: 100%;
+  }
+
   :root {
     --white: #fff;
     --pink: #f67599;
@@ -15,10 +36,9 @@ const Description = styled.p`
     --grey-400: #808080;
     --grey-300: #999;
     --site-edge-margin: 15px;
-    --main-font-family: "Noto Sans TC", sans-serif;
   }
   body {
-    background-color: #fff;
+    background-color: #000000;
     --footer-background-color: #f6f7f8;
     --nav-icon: #2a2a2a;
     --social-icon: #808080;
@@ -149,7 +169,7 @@ const Description = styled.p`
     flex-wrap: wrap;
     flex: 0 0 100%;
     align-content: flex-start;
-    max-width: 100%;
+    max-width: 500px;
   }
   @media screen and (min-width: 749.5px) {
     .col.col-lg-1 {
@@ -329,17 +349,19 @@ function App() {
   return (
     <>
       <Description>
-        <section className="progress-container col col-12">
-          <StepProgress />
-        </section>
-        <section className="form-container col col-12">
-          <Step1 />
-          <Step2 />
-          <Step3 />
-        </section>
-        <section className="progress-control-container col col-lg-6 col-sm-12">
-          <ProgressControl />
-        </section>
+        <main calssName="site-main">
+          <div className="main-container">
+            <StepProgress />
+            <section className="form-container">
+              <Step1 />
+              <Step2 />
+              <Step3 />
+            </section>
+            <section className="progress-control-container">
+              <ProgressControl />
+            </section>
+          </div>
+        </main>
       </Description>
     </>
   );

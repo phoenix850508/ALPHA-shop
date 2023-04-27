@@ -10,12 +10,6 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
   integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
   crossorigin="anonymous"
 />;
-<link rel="preconnect" href="https://fonts.googleapis.com" />;
-<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />;
-<link
-  href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&family=Noto+Sans+TC:wght@400;700;900&family=Poppins:wght@100;400;600&display=swap"
-  rel="stylesheet"
-/>;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

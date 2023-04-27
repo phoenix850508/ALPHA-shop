@@ -1,0 +1,40 @@
+.buttonGroup {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-content: flex-end;
+  max-width: 500px;
+  border-top: solid #E6E6EB 1px;
+}
+
+.btnPrevious {
+  align-self: flex-end;
+  background-color: transparent;
+  line-height: 20px;
+  font-weight: 900;
+  color: #000000;
+  height: 46px;
+  font-size: 14px;
+  border-radius: 8px;
+  border-width: 0px;
+  padding: 0px;
+}
+
+.btnNext {
+  position: absolute;
+  right: 0;
+  align-self: flex-end;
+  background-color: #F67599;
+  line-height: 20px;
+  font-weight: 900;
+  color: #FFFFFF;
+  width: 174px;
+  height: 46px;
+  font-size: 14px;
+  border-radius: 8px;
+  border-width: 0px;
+  padding: 0px;
+}
