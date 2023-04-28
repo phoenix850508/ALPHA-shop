@@ -4,7 +4,7 @@ import styles from "../styles/ProgressControl.module.css";
 
 export function ControlNext() {
   return (
-    <button className={styles.btnNext}>
+    <button className={`${styles.btnNext}`}>
       下一步
       <img
         className={`cursor-point ${styles.arrow}`}

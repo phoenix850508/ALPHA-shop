@@ -31,10 +31,20 @@
   line-height: 20px;
   font-weight: 900;
   color: #FFFFFF;
-  width: 174px;
+  width: 110px;
   height: 46px;
   font-size: 14px;
   border-radius: 8px;
   border-width: 0px;
   padding: 0px;
+}
+
+.btnNext:nth-child(1) {
+  width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+  .btnNext:nth-child(1), .btnNext{
+      width: 174px;
+    }
 }

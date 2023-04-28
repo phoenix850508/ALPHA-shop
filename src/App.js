@@ -9,7 +9,7 @@ import "./App.css";
 const Description = styled.div`
   .main-container {
     margin: 0 auto;
-    padding: 1rem 2.5rem;
+    padding: 1rem 2rem;
     width: 90%;
   }
 

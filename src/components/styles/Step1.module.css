@@ -1,14 +1,13 @@
 .inputGroupContainer {
   width: 100%;
   display: grid;
-  grid-template-columns: .7fr 2.2fr;
   gap: 1rem;
   margin-bottom: 1.6rem;
 }
 
-.inputGroupContainerResize {
-  composes: inputGroupContainer;
-  grid-template-columns: 1.5fr 2fr;
+.inputGroupContainerInline {
+  grid-template-columns: 1fr 1.5fr;
+  gap: 1.8rem;
 }
 
 .inputGroup{
@@ -28,4 +27,18 @@
 
 .input:invalid{
   color: #747474;
+}
+
+@media screen and (min-width: 600px) {
+  .inputGroupContainer, .inputGroupContainerInline {
+      width: 100%;
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: .7fr 2.2fr;
+    }
+
+    .inputGroupContainerResize {
+      composes: inputGroupContainer;
+      grid-template-columns: 1.5fr 2fr;
+    }
 }

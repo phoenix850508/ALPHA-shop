@@ -5,7 +5,9 @@ export default function Step1() {
     <form className={`col col-12 ${styles.form}`} data-phase="address">
       <h3 className="form-title">寄送地址</h3>
       <section className={`form-body col col-12 ${styles.formBody}`}>
-        <div className={styles.inputGroupContainer}>
+        <div
+          className={`${styles.inputGroupContainer} ${styles.inputGroupContainerInline}`}
+        >
           <div className={`${styles.inputGroup}`}>
             <div className="input-label">稱謂</div>
             <div className="select-container">
