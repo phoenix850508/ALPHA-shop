@@ -3,14 +3,15 @@ import Step1 from "./components/step/Step1.js";
 import Step2 from "./components/step/Step2.js";
 import Step3 from "./components/step/Step3.js";
 import ProgressControl from "./components/step/ProgressControl.js";
+import Header from "./components/header/Header.js";
 import styled from "styled-components";
 import "./App.css";
 
 const Description = styled.div`
   .main-container {
-    margin: 0 auto;
-    padding: 1rem 2rem;
-    width: 90%;
+    margin: 8.5rem auto 0;
+    padding: 0 2rem 0 2rem;
+    width: 80%;
   }
 
   .input-label {
@@ -169,7 +170,7 @@ const Description = styled.div`
     flex-wrap: wrap;
     flex: 0 0 100%;
     align-content: flex-start;
-    max-width: 500px;
+    max-width: 700px;
   }
   @media screen and (min-width: 749.5px) {
     .col.col-lg-1 {
@@ -255,6 +256,10 @@ const Description = styled.div`
       flex: 0 0 100%;
       align-content: flex-start;
       max-width: 100%;
+    }
+
+    .col.col-12 {
+      max-width: 550px;
     }
   }
   @media screen and (max-width: 749.5px) {
@@ -342,6 +347,12 @@ const Description = styled.div`
       align-content: flex-start;
       max-width: 100%;
     }
+
+    .main-container {
+      margin: 3rem auto 0;
+      width: 100%;
+      padding: 1.5rem;
+    }
   }
 `;
 
@@ -349,6 +360,7 @@ function App() {
   return (
     <div>
       <Description>
+        <Header />
         <main className="site-main">
           <div className="main-container">
             <StepProgress />

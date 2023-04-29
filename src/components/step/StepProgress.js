@@ -54,7 +54,7 @@ const StyleComponent = styled.div`
     display: none;
   }
 
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 749.5px) {
     .register-title {
       margin: 3rem 0 1.5rem 0;
     }
@@ -120,7 +120,7 @@ function Step(props) {
 export default function StepProgess() {
   return (
     <div>
-      <StyleComponent component="span">
+      <StyleComponent>
         <h2 className="register-title col col-12">結帳</h2>
         <section className="progress-container">
           <Step phase={"address"} text={1} step={"寄送地址"} />
