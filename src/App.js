@@ -4,10 +4,14 @@ import Step2 from "./components/step/Step2.js";
 import Step3 from "./components/step/Step3.js";
 import ProgressControl from "./components/step/ProgressControl.js";
 import Header from "./components/header/Header.js";
+import Footer from "./components/footer/Footer.js";
 import styled from "styled-components";
 import "./App.css";
 
 const Description = styled.div`
+  .site-main {
+    margin-bottom: 120px;
+  }
   .main-container {
     margin: 8.5rem auto 0;
     padding: 0 2rem 0 2rem;
@@ -374,6 +378,7 @@ function App() {
             </section>
           </div>
         </main>
+        <Footer />
       </Description>
     </div>
   );
