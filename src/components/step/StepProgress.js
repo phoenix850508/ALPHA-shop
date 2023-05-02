@@ -60,7 +60,7 @@ const StyleComponent = styled.div`
     }
 
     .progress-container {
-      width: 40%;
+      max-width: 500px;
     }
 
     .progress-group {
@@ -72,9 +72,8 @@ const StyleComponent = styled.div`
     }
 
     .progress-bar {
-      margin: 0 24px 0 0;
+      margin: 0 20px 0 0;
       flex: 1;
-      min-width: 80px;
       border-width: 2px;
       margin-top: 12px;
     }
@@ -119,17 +118,15 @@ function Step(props) {
 
 export default function StepProgess() {
   return (
-    <div>
-      <StyleComponent>
-        <h2 className="register-title col col-12">結帳</h2>
-        <section className="progress-container">
-          <Step phase={"address"} text={1} step={"寄送地址"} />
-          <span className="progress-bar bar1"></span>
-          <Step phase={"shipping"} text={2} step={"運送方式"} />
-          <span className="progress-bar bar2"></span>
-          <Step phase={"credit-card"} text={3} step={"付款資訊"} />
-        </section>
-      </StyleComponent>
-    </div>
+    <StyleComponent>
+      <h2 className="register-title col col-12">結帳</h2>
+      <section className="progress-container">
+        <Step phase={"address"} text={1} step={"寄送地址"} />
+        <span className="progress-bar bar1"></span>
+        <Step phase={"shipping"} text={2} step={"運送方式"} />
+        <span className="progress-bar bar2"></span>
+        <Step phase={"credit-card"} text={3} step={"付款資訊"} />
+      </section>
+    </StyleComponent>
   );
 }

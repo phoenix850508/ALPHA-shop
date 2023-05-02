@@ -3,6 +3,7 @@ import Step1 from "./components/step/Step1.js";
 import Step2 from "./components/step/Step2.js";
 import Step3 from "./components/step/Step3.js";
 import ProgressControl from "./components/step/ProgressControl.js";
+import Cart from "./components/cart/Cart.js";
 import Header from "./components/header/Header.js";
 import Footer from "./components/footer/Footer.js";
 import styled from "styled-components";
@@ -15,7 +16,17 @@ const Description = styled.div`
   .main-container {
     margin: 8.5rem auto 0;
     padding: 0 2rem 0 2rem;
-    width: 80%;
+    max-width: 1100px;
+  }
+
+  .register-container {
+  }
+
+  .cart-container {
+    border: 1px solid #f0f0f5;
+    border-radius: 8px;
+    padding: 1rem;
+    flex: 1;
   }
 
   .input-label {
@@ -177,6 +188,20 @@ const Description = styled.div`
     max-width: 700px;
   }
   @media screen and (min-width: 749.5px) {
+    .main-container {
+      display: grid;
+      grid-template-columns: 1.5fr 1.2fr;
+      grid-template-rows: auto auto;
+      gap: 1.2rem;
+      justify-content: space-between;
+    }
+
+    .cart-container {
+      margin-top: calc(93px + 3rem + 2rem);
+      grid-row: 1 / 3;
+      grid-column: 2 / 3;
+    }
+
     .col.col-lg-1 {
       display: flex;
       flex-wrap: wrap;
@@ -263,7 +288,8 @@ const Description = styled.div`
     }
 
     .col.col-12 {
-      max-width: 550px;
+      width: 100%;
+      max-width: 500px;
     }
   }
   @media screen and (max-width: 749.5px) {
@@ -367,11 +393,18 @@ function App() {
         <Header />
         <main className="site-main">
           <div className="main-container">
-            <StepProgress />
-            <section className="form-container">
-              <Step1 />
-              <Step2 />
-              <Step3 />
+            <section className="register-container">
+              <section className="progress-cointainer">
+                <StepProgress />
+              </section>
+              <section className="form-container">
+                <Step1 />
+                <Step2 />
+                <Step3 />
+              </section>
+            </section>
+            <section className="cart-container">
+              <Cart />
             </section>
             <section className="progress-control-container">
               <ProgressControl />

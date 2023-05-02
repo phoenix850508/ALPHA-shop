@@ -11,6 +11,7 @@
 .headerContainer {
   position: relative;
   padding: 1rem;
+  font-weight: 500;
 }
 
 .burgerContainer,
@@ -31,7 +32,8 @@
 @media screen and (min-width: 749.5px) {
   .headerContainer {
     display: flex;
-    width: 80%;
+    width: 100%;
+    max-width: 1100px;
     padding: 1rem 2rem 0 2rem;
   }
 
