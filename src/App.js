@@ -19,13 +19,10 @@ const Description = styled.div`
     max-width: 1100px;
   }
 
-  .register-container {
-  }
-
   .cart-container {
     border: 1px solid #f0f0f5;
     border-radius: 8px;
-    padding: 1rem;
+    padding: 2rem 1.5rem;
     flex: 1;
   }
 
