@@ -4,8 +4,22 @@ import product1 from "../../images/product-1.jpg";
 import product2 from "../../images/product-2.jpg";
 import styles from "../styles/Cart.module.scss";
 
-//count: 0, price: 3999
-//count 0, price: 1299
+const cartData = [
+  {
+    id: "1",
+    name: "貓咪罐罐",
+    img: "https://picsum.photos/300/300?text=1",
+    price: 100,
+    quantity: 2,
+  },
+  {
+    id: "2",
+    name: "貓咪干干",
+    img: "https://picsum.photos/300/300?text=2",
+    price: 200,
+    quantity: 1,
+  },
+];
 
 export function Product(props) {
   return (
@@ -20,14 +34,11 @@ export function Product(props) {
         alt={props.product}
       />
       <div className={`product-info ${styles.productInfo}`}>
-        <div className={`product-name ${styles.productName}`}>
-          破壞補丁修身牛仔褲
-        </div>
+        <div className={`product-name ${styles.productName}`}>{props.name}</div>
         <div className="product-control-container">
           <div className={`product-control ${styles.productControl}`}>
             <img
               className={`product-action ${styles.productAction}`}
-              minus
               src={minus}
               alt="minus.svg"
             />
@@ -36,7 +47,6 @@ export function Product(props) {
             </span>
             <img
               className={`product-action ${styles.productAction}`}
-              plus
               src={plus}
               alt="plus.svg"
             />
@@ -64,24 +74,36 @@ export function CartInfo(props) {
 
 export default function Cart() {
   return (
-    <div className={styles.cartContainer}>
+    <div className={`${styles.cartContainer} ${styles.scrollbar}`}>
       <h4 className={`cart-title ${styles.cartTitle}`}>購物籃</h4>
       <section
         className={`product-list col col-12 ${styles.productList}`}
         data-total-price={0}
       >
         <Product
+          name={"破壞補丁修身牛仔褲"}
           count={"0"}
           price={"3999"}
           productImg={product1}
           product={"product-1"}
         />
         <Product
+          name={"刷色直筒牛仔褲"}
           count={"0"}
           price={"1299"}
           productImg={product2}
           product={"product-2"}
         />
+        {cartData.map((data) => (
+          <Product
+            key={data.id}
+            name={data.name}
+            count={data.quantity}
+            price={data.price}
+            productImg={data.img}
+            product={`${data.img}`}
+          />
+        ))}
       </section>
       <CartInfo info={"shipping"} text={"運費"} price={"免費"} />
       <CartInfo info={"total"} text={"小計"} price={0} />

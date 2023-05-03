@@ -26,6 +26,12 @@ const Description = styled.div`
     flex: 1;
   }
 
+  .progress-control-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
   .input-label {
     color: #808080;
     font-size: 12px;

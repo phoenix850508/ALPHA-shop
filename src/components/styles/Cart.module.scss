@@ -24,6 +24,23 @@
   justify-content: space-between;
 }
 
+.price {
+  font-weight: 700;
+}
+
+.productControl {
+  width: 116px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.productAction {
+  width: 26px;
+  border: 1px solid #f0f0f5;
+  background-color: #f0f0f5;
+  border-radius: 50%;
+}
+
 .cartTitle {
   font-size: 18px;
   font-weight: 700;
@@ -44,6 +61,7 @@
 
 .cartPrice {
   color: #000000;
+  font-weight: bold;
 }
 
 @media screen and (min-width: 749.5px) {
@@ -62,7 +80,6 @@
   .price {
     grid-column: 2/ 3;
     grid-row: 1/ 2;
-    font-weight: 700;
   }
 
   .count {
@@ -70,18 +87,5 @@
     grid-row: 2/ 3;
     width: 100%;
     text-align: center;
-  }
-
-  .productControl {
-    width: 116px;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .productAction {
-    width: 26px;
-    border: 1px solid #f0f0f5;
-    background-color: #f0f0f5;
-    border-radius: 50%;
   }
 }
