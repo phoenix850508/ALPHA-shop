@@ -1,8 +1,8 @@
-import minus from "../../icons/minus.svg";
-import plus from "../../icons/plus.svg";
-import product1 from "../../images/product-1.jpg";
-import product2 from "../../images/product-2.jpg";
-import styles from "../styles/Cart.module.scss";
+import minus from "../../../assets/icons/minus.svg";
+import plus from "../../../assets/icons/plus.svg";
+import product1 from "../../../assets/images/product-1.jpg";
+import product2 from "../../../assets/images/product-2.jpg";
+import styles from "../../styles/Cart.module.scss";
 
 const cartData = [
   {

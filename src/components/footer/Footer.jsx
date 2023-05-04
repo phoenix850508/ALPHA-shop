@@ -1,7 +1,7 @@
-import logo from "../../icons/logo.svg";
-import facebook from "../../icons/facebook.svg";
-import instagram from "../../icons/instagram.svg";
-import whatsapp from "../../icons/whatsapp.svg";
+import logo from "../../assets/icons/logo.svg";
+import facebook from "../../assets/icons/facebook.svg";
+import instagram from "../../assets/icons/instagram.svg";
+import whatsapp from "../../assets/icons/whatsapp.svg";
 import styles from "../styles/Footer.module.scss";
 
 export function FooterSection({ sectionTitle, children }) {

@@ -1,6 +1,6 @@
-import rightArrow from "../../icons/right-arrow.svg";
-import leftArrow from "../../icons/left-arrow.svg";
-import styles from "../styles/ProgressControl.module.scss";
+import rightArrow from "../../../assets/icons/right-arrow.svg";
+import leftArrow from "../../../assets/icons/left-arrow.svg";
+import styles from "../../styles/ProgressControl.module.scss";
 
 export function ControlNext() {
   return (

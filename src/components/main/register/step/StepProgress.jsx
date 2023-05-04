@@ -1,4 +1,4 @@
-import pgComplete from "../../icons/pg-complete.svg";
+import pgComplete from "../../../../assets/icons/pg-complete.svg";
 import styled from "styled-components";
 const StyleComponent = styled.div`
   .progress-container {

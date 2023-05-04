@@ -1,4 +1,4 @@
-import styles from "../styles/Step3.module.scss";
+import styles from "../../../styles/Step3.module.scss";
 
 export default function Step3() {
   return (
@@ -10,7 +10,7 @@ export default function Step3() {
       <section className={`form-body col col-12 ${styles.formBody}`}>
         <div className="col col-12">
           <div className={styles.inputGroup}>
-            <div className="input-label">持卡人姓名</div>
+            <div className={`input-label ${styles.inputLabel}`}>持卡人姓名</div>
             <input
               className={styles.input}
               type="text"
@@ -20,7 +20,7 @@ export default function Step3() {
         </div>
         <div className="col col-12">
           <div className={styles.inputGroup}>
-            <div className="input-label">卡號</div>
+            <div className={`input-label ${styles.inputLabel}`}>卡號</div>
             <input
               className={styles.input}
               type="text"
@@ -30,11 +30,11 @@ export default function Step3() {
         </div>
         <div className={styles.inputGroupContainer}>
           <div className={styles.inputGroup}>
-            <div className="input-label">有效期限</div>
+            <div className={`input-label ${styles.inputLabel}`}>有效期限</div>
             <input className={styles.input} type="text" placeholder="MM/YY" />
           </div>
           <div className={styles.inputGroup}>
-            <div className="input-label">CVC / CCV</div>
+            <div className={`input-label ${styles.inputLabel}`}>CVC / CCV</div>
             <input className={styles.input} type="text" placeholder={123} />
           </div>
         </div>

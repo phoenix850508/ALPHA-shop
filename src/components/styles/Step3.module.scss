@@ -19,3 +19,7 @@
   composes: input from "./Step1.module.scss";
   max-width: 400px;
 }
+
+.inputLabel {
+  font-weight: bold;
+}

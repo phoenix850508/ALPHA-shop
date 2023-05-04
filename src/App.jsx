@@ -1,22 +1,24 @@
-import StepProgress from "./components/step/StepProgress.js";
-import Step1 from "./components/step/Step1.js";
-import Step2 from "./components/step/Step2.js";
-import Step3 from "./components/step/Step3.js";
-import ProgressControl from "./components/step/ProgressControl.js";
-import Cart from "./components/cart/Cart.js";
-import Header from "./components/header/Header.js";
-import Footer from "./components/footer/Footer.js";
-import styled from "styled-components";
 import "./App.css";
+import StepProgress from "./components/main/register/step/StepProgress.jsx";
+import Step1 from "./components/main/register/step/Step1.jsx";
+import Step2 from "./components/main/register/step/Step2.jsx";
+import Step3 from "./components/main/register/step/Step3.jsx";
+import ProgressControl from "./components/main/progressControl/ProgressControl.jsx";
+import Cart from "./components/main/cart/Cart.jsx";
+import Header from "./components/header/Header.jsx";
+import Footer from "./components/footer/Footer.jsx";
+import styled from "styled-components";
+
 
 const Description = styled.div`
   .site-main {
     margin-bottom: 120px;
   }
   .main-container {
-    margin: 8.5rem auto 0;
+    margin: 5rem auto 0;
     padding: 0 2rem 0 2rem;
     max-width: 1100px;
+    font-family: 'Noto Sans TC', sans-serif;
   }
 
   .cart-container {
@@ -24,12 +26,14 @@ const Description = styled.div`
     border-radius: 8px;
     padding: 2rem 1.5rem;
     flex: 1;
+    font-family: 'Noto Sans TC', sans-serif;
   }
 
   .progress-control-container {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    font-family: 'Noto Sans TC', sans-serif;
   }
 
   .input-label {
@@ -45,6 +49,7 @@ const Description = styled.div`
   .progress-control-container {
     margin-top: 50px;
     width: 100%;
+    font-family: 'Noto Sans TC', sans-serif;
   }
 
   :root {
@@ -86,6 +91,7 @@ const Description = styled.div`
     font-size: 16px;
     user-select: none;
   }
+
   ul,
   ol,
   li {
@@ -195,7 +201,7 @@ const Description = styled.div`
       display: grid;
       grid-template-columns: 1.5fr 1.2fr;
       grid-template-rows: auto auto;
-      gap: 1.2rem;
+      gap: 4rem;
       justify-content: space-between;
     }
 

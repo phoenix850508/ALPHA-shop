@@ -1,4 +1,4 @@
-import styles from "../styles/Step1.module.scss";
+import styles from "../../../styles/Step1.module.scss";
 
 export default function Step1() {
   return (
@@ -9,7 +9,7 @@ export default function Step1() {
           className={`${styles.inputGroupContainer} ${styles.inputGroupContainerInline}`}
         >
           <div className={`${styles.inputGroup}`}>
-            <div className="input-label">稱謂</div>
+            <div className={`input-label ${styles.inputLabel}`}>稱謂</div>
             <div className="select-container">
               <select className={`${styles.input}`}>
                 <option value="mr" selected="">
@@ -21,7 +21,7 @@ export default function Step1() {
             </div>
           </div>
           <div className={`${styles.inputGroup}`}>
-            <div className="input-label">姓名</div>
+            <div className={`input-label ${styles.inputLabel}`}>姓名</div>
             <input
               className={`${styles.input}`}
               type="text"
@@ -31,7 +31,7 @@ export default function Step1() {
         </div>
         <div className={styles.inputGroupContainerResize}>
           <div className={`${styles.inputGroup}`}>
-            <div className="input-label">電話</div>
+            <div className={`input-label ${styles.inputLabel}`}>電話</div>
             <input
               className={styles.input}
               type="tel"
@@ -39,7 +39,7 @@ export default function Step1() {
             />
           </div>
           <div className={`${styles.inputGroup}`}>
-            <div className="input-label">Email</div>
+            <div className={`input-label ${styles.inputLabel}`}>Email</div>
             <input
               className={styles.input}
               type="email"
@@ -51,7 +51,7 @@ export default function Step1() {
           <div
             className={`input-group input-w-lg-2 input-w-sm-full ${styles.inputGroup}`}
           >
-            <div className="input-label">縣市</div>
+            <div className={`input-label ${styles.inputLabel}`}>縣市</div>
             <div className="select-container">
               <select className={styles.input} required>
                 <option value="" selected disabled>
@@ -90,7 +90,7 @@ export default function Step1() {
             </div>
           </div>
           <div className={`${styles.inputGroup}`}>
-            <div className="input-label">地址</div>
+            <div className={`input-label ${styles.inputLabel}`}>地址</div>
             <input
               className={styles.input}
               type="text"

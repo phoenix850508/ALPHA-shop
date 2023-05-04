@@ -1,9 +1,9 @@
-import logo from "../../icons/logo.svg";
-import search from "../../icons/search.svg";
-import cart from "../../icons/cart.svg";
-import moon from "../../icons/moon.svg";
-import sun from "../../icons/sun.svg";
-import toggle from "../../icons/toggle.svg";
+import logo from "../../assets/icons/logo.svg";
+import search from "../../assets/icons/search.svg";
+import cart from "../../assets/icons/cart.svg";
+import moon from "../../assets/icons/moon.svg";
+import sun from "../../assets/icons/sun.svg";
+import toggle from "../../assets/icons/toggle.svg";
 import styles from "../styles/Header.module.scss";
 
 export default function Header() {
