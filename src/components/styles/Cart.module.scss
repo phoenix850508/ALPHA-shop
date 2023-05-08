@@ -2,6 +2,11 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  border: 1px solid #f0f0f5;
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  flex: 1;
+  font-family: "Noto Sans TC", sans-serif;
 }
 
 .productList {
@@ -65,6 +70,12 @@
 }
 
 @media screen and (min-width: 749.5px) {
+  .cartContainer {
+    margin-top: calc(93px + 3rem + 2rem);
+    grid-row: 1 / 3;
+    grid-column: 2 / 3;
+  }
+
   .productInfo {
     display: grid;
     grid-template-columns: 2fr 0.5fr;

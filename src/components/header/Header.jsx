@@ -30,26 +30,31 @@ export default function Header() {
         <nav className={`navbar-menu ${styles.navbarMenu}`}>
           <ul className={`nav-list site-menu-list mr-auto ${styles.menuList}`}>
             <li className="nav-item">
+              {/* eslint-disable-next-line */}
               <a className="nav-link secondary-text" href="#">
                 男款
               </a>
             </li>
             <li className="nav-item">
+              {/* eslint-disable-next-line */}
               <a className="nav-link" href="#">
                 女款
               </a>
             </li>
             <li className="nav-item">
+              {/* eslint-disable-next-line */}
               <a className="nav-link" href="#">
                 最新消息
               </a>
             </li>
             <li className="nav-item">
+              {/* eslint-disable-next-line */}
               <a className="nav-link" href="#">
                 客製商品
               </a>
             </li>
             <li className="nav-item">
+              {/* eslint-disable-next-line */}
               <a className="nav-link" href="#">
                 聯絡我們
               </a>
@@ -89,6 +94,7 @@ export default function Header() {
           </ul>
         </nav>
         {/* logo */}
+        {/* eslint-disable-next-line */}
         <a className="header-logo-container" href="#">
           <img
             className={`nav-icon cursor-point ${styles.logo}`}

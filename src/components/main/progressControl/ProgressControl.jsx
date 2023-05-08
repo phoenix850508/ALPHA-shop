@@ -34,7 +34,7 @@ export function ControlSubmit() {
 
 export default function ProgressControl() {
   return (
-    <>
+    <section className={styles.progressControlContainer}>
       <section className={`${styles.buttonGroup}`} data-phase="address">
         <ControlNext />
       </section>
@@ -46,6 +46,6 @@ export default function ProgressControl() {
         <ControlPrevious />
         <ControlSubmit />
       </section>
-    </>
+    </section>
   );
 }

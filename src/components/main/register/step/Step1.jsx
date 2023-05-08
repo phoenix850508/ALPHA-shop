@@ -3,7 +3,7 @@ import styles from "../../../styles/Step1.module.scss";
 export default function Step1() {
   return (
     <form className={`col col-12 ${styles.form}`} data-phase="address">
-      <h3 className="form-title">寄送地址</h3>
+      <h3 className={styles.formTitle}>寄送地址</h3>
       <section className={`form-body col col-12 ${styles.formBody}`}>
         <div
           className={`${styles.inputGroupContainer} ${styles.inputGroupContainerInline}`}

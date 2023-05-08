@@ -1,3 +1,9 @@
+$screen-break-point: 749.5px;
+
+li {
+  cursor: pointer;
+}
+
 .siteHeader {
   position: fixed;
   width: 100%;
@@ -12,6 +18,8 @@
   position: relative;
   padding: 1rem;
   font-weight: 500;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .burgerContainer,
@@ -21,15 +29,19 @@
 
 .navbarMenu {
   display: none;
+  .menuList {
+    margin-right: auto !important;
+  }
 }
 
 .logo {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  cursor: pointer;
 }
 
-@media screen and (min-width: 749.5px) {
+@media screen and (min-width: $screen-break-point) {
   .headerContainer {
     display: flex;
     width: 100%;
