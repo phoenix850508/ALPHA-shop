@@ -4,7 +4,6 @@ import product1 from "../../../assets/images/product-1.jpg";
 import product2 from "../../../assets/images/product-2.jpg";
 import styles from "../../styles/Cart.module.scss";
 import {useState} from "react";
-import { getValue } from "@testing-library/user-event/dist/utils";
 
 const cartData = [
   {
@@ -95,13 +94,16 @@ export function CartInfo(props) {
 }
 
 export default function Cart() {
-  let initialAddPrice = 0
+  // 將cartData裡的資料儲存到useState
   const [productData, setProductData] = useState(cartData)
-  cartData.map(data => data.quantity > 0? initialAddPrice += (data.price * data.quantity) : initialAddPrice)
+  // 從productData撈資料 先列印出一開始的cart加總金額 initaladdPrice
+  let initialAddPrice = 0
+  productData.map(data => data.quantity > 0? initialAddPrice += (data.price * data.quantity) : initialAddPrice)
+   // 將一開始cart的加總金額儲存到useState
   const [addPrice, setAddPrice] = useState(initialAddPrice)
 
   function handleMinusClick(productId) {
-    setProductData(pd => productData.map(data => {
+    setProductData(productData.map(data => {
       if(data.id === productId) {
         setAddPrice(addPrice < data.price || (data.quantity === 0)? addPrice : addPrice - data.price)
         return {...data, quantity: data.quantity === 0? 0 : data.quantity - 1}
