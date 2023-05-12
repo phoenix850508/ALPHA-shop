@@ -1,10 +1,9 @@
 import styles from "../../../styles/Step3.module.scss";
 
 export default function Step3({isShown}) {
-  if (isShown) {
     return (
     <form
-      className={`col col-12 ${styles.form}`}
+      className={`${isShown? '' : 'd-none'} col col-12 ${styles.form}`}
       data-phase="credit-card"
     >
       <h3 className={styles.formTitle}>付款資訊</h3>
@@ -42,5 +41,4 @@ export default function Step3({isShown}) {
       </section>
     </form>
   );
-  }
 }

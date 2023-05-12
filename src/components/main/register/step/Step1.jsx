@@ -1,9 +1,8 @@
 import styles from "../../../styles/Step1.module.scss";
 
 export default function Step1({isShown}) {
-  if (isShown) {
     return (
-        <form className={`col col-12 ${styles.form}`} data-phase="address">
+        <form className={`${isShown? '' : 'd-none'} col col-12`} data-phase="address">
           <h3 className={styles.formTitle}>寄送地址</h3>
           <section className={`form-body col col-12 ${styles.formBody}`}>
             <div
@@ -102,5 +101,4 @@ export default function Step1({isShown}) {
           </section>
         </form>
       );
-  }
 }

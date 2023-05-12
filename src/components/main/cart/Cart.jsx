@@ -83,11 +83,8 @@ export function CartInfo(props) {
   return (
     <section className={`cart-info ${props.info} ${styles.cartInfo}`}>
       <div className="text">{props.text}</div>
-      <div
-        className={`cart-price ${styles.cartPrice}`}
-        style={{ color: "bold" }}
-      >
-        {`${props.price}` === "免費" ? `${props.price}` : `$${props.price}`}
+      <div className={`cart-price ${styles.cartPrice}`}>
+        {props.price === 0 ? '免費' : '$' + props.price}
       </div>
     </section>
   );
@@ -105,7 +102,7 @@ export default function Cart() {
   function handleMinusClick(productId) {
     setProductData(productData.map(data => {
       if(data.id === productId) {
-        setAddPrice(addPrice < data.price || (data.quantity === 0)? addPrice : addPrice - data.price)
+        setAddPrice((data.quantity === 0)? addPrice : addPrice - data.price)
         return {...data, quantity: data.quantity === 0? 0 : data.quantity - 1}
       }
       return {...data}
@@ -132,7 +129,7 @@ export default function Cart() {
           <Product key={data.id} {...data} onMinusClick={handleMinusClick} onPlusClick={handlePlusClick}/>
         ))}
       </section>
-      <CartInfo info={"shipping"} text={"運費"} price={"免費"} />
+      <CartInfo info={"shipping"} text={"運費"} price={0} />
       <CartInfo info={"total"} text={"小計"} price={addPrice} />
     </div>
   );
