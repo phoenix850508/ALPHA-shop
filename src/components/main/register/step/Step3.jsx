@@ -1,12 +1,13 @@
 import styles from "../../../styles/Step3.module.scss";
 
-export default function Step3() {
-  return (
+export default function Step3({isShown}) {
+  if (isShown) {
+    return (
     <form
-      className={`d-none col col-12 ${styles.form}`}
+      className={`col col-12 ${styles.form}`}
       data-phase="credit-card"
     >
-      <h3 className="form-title">付款資訊</h3>
+      <h3 className={styles.formTitle}>付款資訊</h3>
       <section className={`form-body col col-12 ${styles.formBody}`}>
         <div className="col col-12">
           <div className={styles.inputGroup}>
@@ -41,4 +42,5 @@ export default function Step3() {
       </section>
     </form>
   );
+  }
 }

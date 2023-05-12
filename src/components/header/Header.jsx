@@ -5,9 +5,20 @@ import moon from "../../assets/icons/moon.svg";
 import sun from "../../assets/icons/sun.svg";
 import toggle from "../../assets/icons/toggle.svg";
 import styles from "../styles/Header.module.scss";
+import styled from "styled-components";
+
+const StyleComponents = styled.div`
+.nav-link {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+`
+
 
 export default function Header() {
   return (
+    <StyleComponents>
     <header className={`site-header ${styles.siteHeader}`}>
       <div className={`header-container mx-auto ${styles.headerContainer}`}>
         {/* navbar-toggle */}
@@ -104,5 +115,6 @@ export default function Header() {
         </a>
       </div>
     </header>
+    </StyleComponents>
   );
 }

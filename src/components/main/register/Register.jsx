@@ -5,24 +5,35 @@ import Step3 from "./step/Step3.jsx"
 import styled from "styled-components";
 
 const StyleComponents = styled.div`
+form {
+  margin-top: 64px;
+}
+
 .input-label {
     color: #808080;
     font-size: 12px;
   }
+
+.nav-link {
+    outline: solid red 2px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
 `
 
 
-export default function Register() {
+export default function Register({step}) {
   return (
     <section className="register-container">
       <section className="progress-cointainer">
-    <StepProgress />
+    <StepProgress step={step} />
     </section>
     <section className="form-container">
     <StyleComponents>
-    <Step1 />
-    <Step2 />
-    <Step3 />
+    <Step1 isShown={step === 0? true : false}/>
+    <Step2 isShown={step === 1? true : false}/>
+    <Step3 isShown={step === 2? true : false}/>
     </StyleComponents>
     </section>
     </section>

@@ -18,11 +18,7 @@ const StyleComponent = styled.div`
     border-width: 1px;
     border-style: solid;
     margin-top: 16px;
-    color: #2a2a2a;
-  }
-
-  .bar2 {
-    color: #afb1bd;
+    color: var(--progress-undone-color);
   }
 
   .progress-label {
@@ -39,19 +35,20 @@ const StyleComponent = styled.div`
     text-align: center;
     border: solid #2a2a2a 0.1rem;
     border-radius: 50%;
-    background: #2a2a2a;
-    color: white;
-  }
-
-  .text2,
-  .text3 {
     background: transparent;
     color: #afb1bd;
     border: solid #afb1bd 0.1rem;
   }
 
-  .cursor-point {
-    display: none;
+  .step-complete {
+      width: 32px;
+      height: 32px;
+  }
+
+  .active {
+    background: var(--progress-current-color);
+    color: white;
+    border-color: var(--progress-current-color);
   }
 
   @media screen and (min-width: 749.5px) {
@@ -60,7 +57,13 @@ const StyleComponent = styled.div`
     }
 
     .progress-container {
-      max-width: 500px;
+      max-width: 700px;
+    }
+
+    .progress-icon,
+    .progressGroup {
+      font-size: 1.2rem;
+      display: flex;
     }
 
     .progress-group {
@@ -78,54 +81,88 @@ const StyleComponent = styled.div`
       margin-top: 12px;
     }
 
-    .progress-icon,
-    .progressGroup {
-      font-size: 1.2rem;
-    }
-
     .text {
       width: 24px;
       height: 24px;
       font-size: 12px;
     }
 
+    .step-complete {
+      width: 24px;
+      height: 24px;
+    }
+
     .progress-label {
       display: inline;
-      color: #2a2a2a;
       font-size: 16px;
       font-weight: 400;
       width: 80px;
+      color: #afb1bd;
     }
 
-    .label2,
-    .label3 {
-      color: #afb1bd;
+    .label-active {
+      color: var(--progress-current-color);
     }
   }
 `;
 
-function Step(props) {
+// 每個步驟顯示
+export function Step(props) {
+  function ProgressIcon(text, step) {
+    if (props.step === props.text) {
+      return <div className={`text text${props.text} active`}>{props.text}</div>
+    }
+    else if (props.step > props.text) {
+      return <img className="step-complete" src={pgComplete} alt="pg-complete.svg" />
+    }
+    else {
+      return <div className={`text text${props.text}`}>{props.text}</div>
+    }
+  }
+
+  // 步驟字樣
+  function ProgressLabel(step) {
+    if (props.step >= props.text) {
+      return <span className={`progress-label label-active`}>{props.stepperTitle}</span>
+    }
+    else {
+      return <span className={`progress-label`}>{props.stepperTitle}</span>
+    }
+  }
+
   return (
     <div className="progress-group" data-phase={props.phase}>
       <div className="progress-icon">
-        <div className={`text text${props.text}`}>{props.text}</div>
-        <img className="cursor-point" src={pgComplete} alt="pg-complete.svg" />
+      <ProgressIcon />
       </div>
-      <span className={`progress-label label${props.text}`}>{props.step}</span>
+      <ProgressLabel />
     </div>
   );
 }
 
-export default function StepProgess() {
+// 進度條
+export function ProgressBar(props) {
+  function Bar(step) {
+    if(props.step) {
+      return <span className="progress-bar active"></span>
+    }
+    else {
+      return <span className="progress-bar"></span>
+    }
+  }
+  return <Bar />
+}
+
+export default function StepProgess({step}) {
   return (
     <StyleComponent>
       <h2 className="register-title col col-12">結帳</h2>
       <section className="progress-container">
-        <Step phase={"address"} text={1} step={"寄送地址"} />
-        <span className="progress-bar bar1"></span>
-        <Step phase={"shipping"} text={2} step={"運送方式"} />
-        <span className="progress-bar bar2"></span>
-        <Step phase={"credit-card"} text={3} step={"付款資訊"} />
+        <Step phase={"address"} text={1} stepperTitle={"寄送地址"} step={step + 1}/>
+        <ProgressBar step={true}/>
+        <Step phase={"shipping"} text={2} stepperTitle={"運送方式"} step={step + 1}/>
+        <ProgressBar step={step > 0? true : false}/>
+        <Step phase={"credit-card"} text={3} stepperTitle={"付款資訊"} step={step + 1}/>
       </section>
     </StyleComponent>
   );

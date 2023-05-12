@@ -1,9 +1,10 @@
 import styles from "../../../styles/Step2.module.scss";
 
-export default function Step2() {
-  return (
-    <form className="d-none col col-12" data-phase="shipping">
-      <h3 className="form-title">運送方式</h3>
+export default function Step2({isShown}) {
+  if (isShown) {
+return (
+    <form className="col col-12" data-phase="shipping">
+      <h3 className={styles.formTitle}>運送方式</h3>
       <section className={`form-body col col-12 ${styles.formBody}`}>
         <label className={styles.radioGroup} data-price={0}>
           <input
@@ -43,4 +44,5 @@ export default function Step2() {
       </section>
     </form>
   );
+  }
 }
