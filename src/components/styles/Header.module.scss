@@ -22,21 +22,47 @@ li {
   margin-right: auto;
 }
 
-.burgerContainer,
 .navbarToggle {
-  display: inline;
+  display: none;
 }
 
 .navbarMenu {
-  display: none;
+  opacity: 0;
+  background-color: #fff;
   .menuList {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-right: auto !important;
     padding: 0;
+    li {
+      width: 100%;
+      padding: 24px 0;
+      display: flex;
+      justify-content: center;
+      border-bottom: 1px solid rgba(42, 42, 42, 0.1);
+    }
+  }
+  .actionList {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 24px 0;
   }
 }
 
+.navbarToggle:checked ~ .navbarMenu {
+  opacity: 1;
+  transform: scale(1);
+}
+
 .logo {
+  height: var(--header-height);
+  width: var(--header-logo-width);
   position: absolute;
+  top: 16.25px;
   left: 50%;
   transform: translateX(-50%);
   cursor: pointer;
@@ -56,6 +82,7 @@ li {
   }
 
   .navbarMenu {
+    opacity: 1;
     width: 100%;
     height: 100%;
     display: flex;
@@ -64,6 +91,16 @@ li {
       display: grid;
       grid-template-columns: repeat(2, 0.5fr) repeat(3, 1fr);
       gap: 0.5rem;
+      margin: 0;
+      background-color: transparent;
+      margin-right: auto !important;
+      padding: 0;
+      li {
+        all: unset;
+      }
+    }
+    .actionList {
+      padding: 0;
     }
   }
 

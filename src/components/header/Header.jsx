@@ -24,7 +24,7 @@ export default function Header() {
         {/* navbar-toggle */}
         <input
           id="navbar-toggle"
-          className={`d-none navbar-toggle ${styles.navbarToggle}`}
+          className={`navbar-toggle ${styles.navbarToggle}`}
           type="checkbox"
         />
         <label

@@ -8,27 +8,13 @@ import {useState} from "react";
 const cartData = [
   {
     id: "1",
-    name: "破壞補丁修身牛仔褲",
-    img: product1,
-    price: 3999,
-    quantity: 0,
-  },
-  {
-    id: "2",
-    name: "刷色直筒牛仔褲",
-    img: product2,
-    price: 1299,
-    quantity: 0,
-  },
-  {
-    id: "3",
     name: "貓咪罐罐",
     img: "https://picsum.photos/300/300?text=1",
     price: 100,
     quantity: 2,
   },
   {
-    id: "4",
+    id: "2",
     name: "貓咪干干",
     img: "https://picsum.photos/300/300?text=2",
     price: 200,
@@ -73,7 +59,7 @@ export function Product(props) {
           </div>
         </div>
         {/* price show */}
-        <div className={`price ${styles.price}`}>${props.quantity * props.price}</div>
+        <div className={`price ${styles.price}`}>${props.price}</div>
       </div>
     </div>
   );
