@@ -1,7 +1,5 @@
 import minus from "../../../assets/icons/minus.svg";
 import plus from "../../../assets/icons/plus.svg";
-import product1 from "../../../assets/images/product-1.jpg";
-import product2 from "../../../assets/images/product-2.jpg";
 import styles from "../../styles/Cart.module.scss";
 import {useState} from "react";
 
@@ -80,15 +78,12 @@ export default function Cart() {
   // 將cartData裡的資料儲存到useState
   const [productData, setProductData] = useState(cartData)
   // 從productData撈資料 先列印出一開始的cart加總金額 initaladdPrice
-  let initialAddPrice = 0
-  productData.map(data => data.quantity > 0? initialAddPrice += (data.price * data.quantity) : initialAddPrice)
-   // 將一開始cart的加總金額儲存到useState
-  const [addPrice, setAddPrice] = useState(initialAddPrice)
+  const deliveryFee = 0
+  const addTotal = productData.map(data => data.price * data.quantity).reduce((accum, current) => accum + current, deliveryFee)
 
   function handleMinusClick(productId) {
     setProductData(productData.map(data => {
       if(data.id === productId) {
-        setAddPrice((data.quantity === 0)? addPrice : addPrice - data.price)
         return {...data, quantity: data.quantity === 0? 0 : data.quantity - 1}
       }
       return {...data}
@@ -97,7 +92,6 @@ export default function Cart() {
   function handlePlusClick(productId) {
      setProductData(productData.map(data => {
       if(data.id === productId) {
-        setAddPrice(addPrice + data.price)
         return {...data, quantity: data.quantity + 1}
       }
       return {...data}
@@ -109,14 +103,14 @@ export default function Cart() {
       <h4 className={`cart-title ${styles.cartTitle}`}>購物籃</h4>
       <section
         className={`product-list col col-12 ${styles.productList}`}
-        data-total-price={addPrice}
+        data-total-price={addTotal}
       >
         {productData.map((data) => (
           <Product key={data.id} {...data} onMinusClick={handleMinusClick} onPlusClick={handlePlusClick}/>
         ))}
       </section>
-      <CartInfo info={"shipping"} text={"運費"} price={0} />
-      <CartInfo info={"total"} text={"小計"} price={addPrice} />
+      <CartInfo info={"shipping"} text={"運費"} price={deliveryFee} />
+      <CartInfo info={"total"} text={"小計"} price={addTotal} />
     </div>
   );
 }
