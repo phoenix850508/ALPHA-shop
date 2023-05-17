@@ -1,6 +1,9 @@
 import rightArrow from "../../../assets/icons/right-arrow.svg";
 import leftArrow from "../../../assets/icons/left-arrow.svg";
 import styles from "../../styles/ProgressControl.module.scss";
+import {useContext} from "react"
+import {Context} from "../Context.jsx"
+import {CartContext} from "../cart/CartContext.jsx"
 
 export function ButtonGroup({isShown, dataPhase, children}) {
   if (isShown) {
@@ -37,10 +40,15 @@ export function ControlPrevious({onClick}) {
 }
 
 export function ControlSubmit({onSubClick}) {
-  return <button className={styles.btnNext} onClick={onSubClick}>確認下單</button>;
+  return <button className={styles.btnNext} onClick={onSubClick}>確認下單</button>
 }
 
 export default function ProgressControl({step, onPrevClick, onNextClick}) {
+  const cardData = useContext(Context)
+  // 從cartInfo撈資料 加總所有產品的價錢*數量以及運費
+  const cartInfo = useContext(CartContext)
+  const deliveryFee = 0
+  const addTotal = cartInfo.map(data => data.price * data.quantity).reduce((accum, current) => accum + current, deliveryFee)
   return (
     <section className={styles.progressControlContainer}>
       <ButtonGroup isShown={step === 0? true : false} dataPhase={"address"}>
@@ -52,7 +60,10 @@ export default function ProgressControl({step, onPrevClick, onNextClick}) {
       </ButtonGroup>
       <ButtonGroup isShown={step === 2? true : false} dataPhase={"credit-card"}>
         <ControlPrevious onClick={onPrevClick}/>
-        <ControlSubmit onSubClick={() => alert("submit")}/>
+        <ControlSubmit onSubClick={() => {
+          console.log(addTotal)
+          console.log(cardData)
+        }}/>
       </ButtonGroup>
     </section>
   );

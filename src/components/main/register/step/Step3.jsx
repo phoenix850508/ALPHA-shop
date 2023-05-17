@@ -1,6 +1,6 @@
 import styles from "../../../styles/Step3.module.scss";
 
-export default function Step3({isShown}) {
+export default function Step3({isShown, onCardChange}) {
     return (
     <form
       className={`${isShown? '' : 'd-none'} col col-12 ${styles.form}`}
@@ -12,9 +12,10 @@ export default function Step3({isShown}) {
           <div className={styles.inputGroup}>
             <div className={`input-label ${styles.inputLabel}`}>持卡人姓名</div>
             <input
-              className={styles.input}
+              className={`cardName ${styles.input}`}
               type="text"
               placeholder="John Doe"
+              onChange={onCardChange}
             />
           </div>
         </div>
@@ -22,20 +23,21 @@ export default function Step3({isShown}) {
           <div className={styles.inputGroup}>
             <div className={`input-label ${styles.inputLabel}`}>卡號</div>
             <input
-              className={styles.input}
+              className={`cardNum ${styles.input}`}
               type="text"
               placeholder="1111 2222 3333 4444"
+              onChange={onCardChange}
             />
           </div>
         </div>
         <div className={styles.inputGroupContainer}>
           <div className={styles.inputGroup}>
             <div className={`input-label ${styles.inputLabel}`}>有效期限</div>
-            <input className={styles.input} type="text" placeholder="MM/YY" />
+            <input className={`cardExpDate ${styles.input}`} type="text" placeholder="MM/YY" onChange={onCardChange}/>
           </div>
           <div className={styles.inputGroup}>
             <div className={`input-label ${styles.inputLabel}`}>CVC / CCV</div>
-            <input className={styles.input} type="text" placeholder={123} />
+            <input className={`cardCCV ${styles.input}`} type="text" placeholder={123} onChange={onCardChange}/>
           </div>
         </div>
       </section>

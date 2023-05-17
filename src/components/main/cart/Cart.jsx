@@ -1,24 +1,8 @@
 import minus from "../../../assets/icons/minus.svg";
 import plus from "../../../assets/icons/plus.svg";
 import styles from "../../styles/Cart.module.scss";
-import {useState} from "react";
-
-const cartData = [
-  {
-    id: "1",
-    name: "貓咪罐罐",
-    img: "https://picsum.photos/300/300?text=1",
-    price: 100,
-    quantity: 2,
-  },
-  {
-    id: "2",
-    name: "貓咪干干",
-    img: "https://picsum.photos/300/300?text=2",
-    price: 200,
-    quantity: 1,
-  },
-];
+import {useContext} from 'react';
+import {CartContext} from "./CartContext.jsx"
 
 export function Product(props) {
   return (
@@ -74,29 +58,11 @@ export function CartInfo(props) {
   );
 }
 
-export default function Cart() {
-  // 將cartData裡的資料儲存到useState
-  const [productData, setProductData] = useState(cartData)
-  // 從productData撈資料 先列印出一開始的cart加總金額 initaladdPrice
+export default function Cart({onMinusClick, onPlusClick}) {
+  // 從cartInfo撈資料 加總所有產品的價錢*數量以及運費
+  const cartInfo = useContext(CartContext)
   const deliveryFee = 0
-  const addTotal = productData.map(data => data.price * data.quantity).reduce((accum, current) => accum + current, deliveryFee)
-
-  function handleMinusClick(productId) {
-    setProductData(productData.map(data => {
-      if(data.id === productId) {
-        return {...data, quantity: data.quantity === 0? 0 : data.quantity - 1}
-      }
-      return {...data}
-    }))
-  }
-  function handlePlusClick(productId) {
-     setProductData(productData.map(data => {
-      if(data.id === productId) {
-        return {...data, quantity: data.quantity + 1}
-      }
-      return {...data}
-    }))
-  }
+  const addTotal = cartInfo.map(data => data.price * data.quantity).reduce((accum, current) => accum + current, deliveryFee)
 
   return (
     <div className={`${styles.cartContainer} ${styles.scrollbar}`}>
@@ -105,8 +71,8 @@ export default function Cart() {
         className={`product-list col col-12 ${styles.productList}`}
         data-total-price={addTotal}
       >
-        {productData.map((data) => (
-          <Product key={data.id} {...data} onMinusClick={handleMinusClick} onPlusClick={handlePlusClick}/>
+        {cartInfo.map((data) => (
+          <Product key={data.id} {...data} onMinusClick={onMinusClick} onPlusClick={onPlusClick}/>
         ))}
       </section>
       <CartInfo info={"shipping"} text={"運費"} price={deliveryFee} />
