@@ -20,7 +20,6 @@ export default function Main() {
 
   // 控制Step3裡面輸入欄改變
   const [cardInfo, setCardInfo] = useState({})
-  const cardData = cardInfo
 
   function handleCardChange(e) {
     setCardInfo(() => {
@@ -39,11 +38,10 @@ export default function Main() {
     })
   }
 
-  // 控制每當購物籃商品數量增加時
-  // 將cartData裡的資料儲存到useState
+  // 控制每當購物籃商品數量增加或減少時
   const cartData = useContext(CartContext)
+  // 將cartData裡的資料儲存到useState
   const [productData, setProductData] = useState(cartData)
-  const cartInfo = productData
 
   function handleMinusClick(productId) {
     setProductData(productData.map(data => {
@@ -63,8 +61,8 @@ export default function Main() {
   }
   return (
     <main className={styles.siteMain}>
-      <Context.Provider value={cardData}>
-        <CartContext.Provider value={cartInfo}>
+      <Context.Provider value={cardInfo}>
+        <CartContext.Provider value={productData}>
           <div className={styles.mainContainer}>
             <Register step={step} onCardChange={handleCardChange}/>
             <Cart onMinusClick={handleMinusClick} onPlusClick={handlePlusClick} />

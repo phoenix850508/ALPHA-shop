@@ -44,11 +44,11 @@ export function ControlSubmit({onSubClick}) {
 }
 
 export default function ProgressControl({step, onPrevClick, onNextClick}) {
-  const cardData = useContext(Context)
-  // 從cartInfo撈資料 加總所有產品的價錢*數量以及運費
-  const cartInfo = useContext(CartContext)
+  const cardInfo = useContext(Context)
+  // 從productData撈資料 加總所有產品的價錢*數量以及運費
+  const productData = useContext(CartContext)
   const deliveryFee = 0
-  const addTotal = cartInfo.map(data => data.price * data.quantity).reduce((accum, current) => accum + current, deliveryFee)
+  const addTotal = productData.map(data => data.price * data.quantity).reduce((accum, current) => accum + current, deliveryFee)
   return (
     <section className={styles.progressControlContainer}>
       <ButtonGroup isShown={step === 0? true : false} dataPhase={"address"}>
@@ -61,8 +61,13 @@ export default function ProgressControl({step, onPrevClick, onNextClick}) {
       <ButtonGroup isShown={step === 2? true : false} dataPhase={"credit-card"}>
         <ControlPrevious onClick={onPrevClick}/>
         <ControlSubmit onSubClick={() => {
-          console.log(addTotal)
-          console.log(cardData)
+        // 檢查使用者是否有輸入所有信用卡內容
+        const checkCardInfo = {'cardName':'', 'cardNum':'', 'cardExpDate':'', 'cardCCV':''}
+          for (let key in cardInfo) {
+              cardInfo[key].trim().length > 0? checkCardInfo[key] = cardInfo[key] : checkCardInfo[key] = "empty input";
+          }
+          console.log('總金額$',addTotal)
+          console.log(checkCardInfo)
         }}/>
       </ButtonGroup>
     </section>

@@ -37,7 +37,7 @@ export default function Step3({isShown, onCardChange}) {
           </div>
           <div className={styles.inputGroup}>
             <div className={`input-label ${styles.inputLabel}`}>CVC / CCV</div>
-            <input className={`cardCCV ${styles.input}`} type="text" placeholder={123} onChange={onCardChange}/>
+            <input className={`cardCCV ${styles.input}`} type="text" placeholder={123} onChange={onCardChange} required/>
           </div>
         </div>
       </section>
